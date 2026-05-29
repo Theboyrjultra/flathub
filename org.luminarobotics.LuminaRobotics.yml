@@ -1,0 +1,36 @@
+id: org.luminarobotics.LuminaRobotics
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: LuminaRobitics
+finish-args:
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --share=ipc
+  - --share=network
+  - --device=dri
+modules:
+  - name: luminarobotics
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/main
+      - cp -r * /app/main/
+      - mkdir -p /app/bin
+      - echo '#!/bin/sh' > /app/bin/LuminaRobitics
+      - echo 'exec /app/main/LuminaRobitics --no-sandbox "$@"' >> /app/bin/LuminaRobitics
+      - chmod +x /app/bin/LuminaRobitics
+      - mkdir -p /app/share/applications
+      - cp org.luminarobotics.LuminaRobotics.desktop /app/share/applications/
+      - mkdir -p /app/share/icons/hicolor/512x512/apps
+      - cp "83f52009-41f2-4c61-aea9-ad1bbbe87c48 (1).jpeg" /app/share/icons/hicolor/512x512/apps/org.luminarobotics.LuminaRobotics.jpeg
+      - mkdir -p /app/share/metainfo
+      - cp org.luminarobotics.LuminaRobotics.metainfo.xml /app/share/metainfo/
+    sources:
+      - type: archive
+        url: "https://github.com/Theboyrjultra/org.luminarobotics.LuminaRobotics/releases/download/1.0.0/LuminaRobitics-linux-x64.tar.gz"
+        sha256: "953bbf287d5547d3794158f1c0f912535670c3bd71cd8e6ae3f414069833ed32"
+      - type: file
+        path: org.luminarobotics.LuminaRobotics.desktop
+      - type: file
+        path: org.luminarobotics.LuminaRobotics.metainfo.xml
