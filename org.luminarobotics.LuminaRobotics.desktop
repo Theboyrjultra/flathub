@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Lumina Robotics
+Exec=LuminaRobitics --no-sandbox
+Icon=org.luminarobotics.LuminaRobotics.jpeg
+Terminal=false
+Categories=Network;WebBrowser;
