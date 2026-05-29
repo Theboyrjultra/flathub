@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.luminarobotics.LuminaRobotics</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Lumina Robotics</name>
+  <summary>Standalone desktop application for Lumina Robotics</summary>
+
+  <description>
+    <p>
+      The official desktop client wrapper for the Lumina Robotics website, providing a seamless user experience.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">org.luminarobotics.LuminaRobotics.desktop</launchable>
+
+  <url type="homepage">https://luminarobotics.com</url>
+
+  <provides>
+    <binary>LuminaRobitics</binary>
+  </provides>
+</component>
